@@ -1,0 +1,211 @@
+* 
+    box-sizing: border-box
+
+body
+    padding: 0 
+    margin: auto 
+    font-family: "roboto" , sans-serif
+    font-weight: 300
+.main 
+    display: grid
+    grid-template-areas: "header header header header" "play play settings how-to-play "
+    
+
+                     
+
+.header
+    grid-area: header
+    display: flex
+    margin: 10px
+    border-radius: 6px
+    height: 15vh 
+    justify-content: center 
+    align-items: center
+    background: #364f6b
+    color: white
+    h1
+        text-align: center
+.how-to-play
+    overflow: auto
+    height: 70vh
+    grid-area: how-to-play
+    margin: 10px
+    padding: 0
+    border-radius: 6px
+    background: #364f6b
+    color: white
+    h2
+        padding: 10px
+        margin: 0
+        width: 100%
+        text-align: center
+        border-radius: 6px 6px 0 0
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5)
+    h3 
+        padding: 10px 20px
+    p 
+        padding: 10px 20px
+        .tips
+            font-size: 20px
+            font-weight: 900
+.play
+    height: 70vh
+    grid-area: play
+    display: flex
+    margin: 10px
+    border-radius: 6px
+    align-items: center
+    flex-direction: column
+    background: #364f6b
+    color: white
+    .input-div 
+        width: 100%
+        display: flex
+        flex-direction: row
+        padding: 10px
+        text-align: center
+        border-radius: 6px 6px 0 0
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5)
+  
+
+    input[type=number]
+        padding: 10px
+        width: 80%
+        outline: none
+        border: none
+        border-radius: 6px
+        background: #121a24
+        color: white
+        
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button 
+        -webkit-appearance: none
+        margin: 0
+    button
+        width: 20%
+        border: none
+        margin: 0 0 0 4px
+        color: #222121
+        background: #08b2b8
+        cursor: pointer
+        border-radius: 5px
+        outline: none
+
+    .results-container
+        overflow: auto
+        margin: 10px 0px
+        padding: 10px 10px
+        display: flex
+        flex-direction: column-reverse
+   
+
+    .results
+        color: white
+        margin: 6px 0
+        border-radius: 6px
+        text-align: center
+        width: 200px
+        background: #213041
+        padding: 2px 0
+
+        ul
+            list-style: none
+            display: block
+            padding: 4px 8px
+            margin: 0
+            li 
+                display: inline-block
+                text-align: center
+                padding: 0 15px
+            .T 
+                font-weight: 900
+                color: #11f711
+            .F 
+                font-weight: 900
+                color: #f81313
+            .P 
+                font-weight: 900
+                color: #fac310
+
+.settings 
+    overflow: auto
+    min-width: 30vh
+    height: 70vh
+    grid-area: settings
+    display: flex
+    margin: 10px
+    padding: 0
+    border-radius: 6px
+    align-items: center
+    flex-direction: column
+    background: #364f6b
+    color: white
+    h3 
+        padding: 10px
+        margin: 0
+        width: 100%
+        text-align: center
+        border-radius: 6px 6px 0 0
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5)
+    .restart-button 
+        width: 80%
+        padding: 10px
+        border: none
+        margin: 10px 0px
+        color: #ece7e7
+        background: #db0b27
+        cursor: pointer
+        border-radius: 6px
+        outline: none
+        &:hover
+            background: #af0a20
+
+    .level-text 
+        padding: 20px 10px 0 10px
+    select 
+        width: 80%
+        padding: 10px
+        border: none
+        margin: 10px 0px
+        color: #ece7e7
+        background: #06965a
+        cursor: pointer
+        border-radius: 6px
+        outline: none
+        &:hover
+            background: #067a4a
+
+    .start 
+        width: 60%
+        padding: 10px 0px
+        border: none
+        margin: 5px 0px
+        color: #ece7e7
+        background: #06659c
+        cursor: pointer
+        outline: none
+        border-radius: 5px 
+        &:hover
+            background: #055c8f
+
+            
+
+
+
+
+::-webkit-scrollbar
+    width: 5px
+::-webkit-scrollbar-thumb
+    background: #122438
+    border-radius: 5px
+::-webkit-scrollbar-thumb:hover 
+    background: #061424
+@media screen and ( max-width:800px  )
+    .main 
+        display: grid
+        grid-template-areas: "header header header" "how-to-play how-to-play how-to-play" "play play settings"
+@media screen and ( max-width:500px  )
+    .main 
+        display: grid
+        grid-template-areas: "header" "how-to-play" "play" "settings"
+
