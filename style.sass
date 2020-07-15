@@ -50,6 +50,7 @@ body
             font-weight: 900
 .play
     height: 70vh
+    min-width: 60vh
     grid-area: play
     display: flex
     margin: 10px
@@ -104,7 +105,7 @@ body
         margin: 6px 0
         border-radius: 6px
         text-align: center
-        width: 200px
+        min-width: 200px
         background: #213041
         padding: 2px 0
 
@@ -126,7 +127,17 @@ body
             .P 
                 font-weight: 900
                 color: #fac310
-
+    .error 
+        margin: 50px auto
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 0 10px
+        max-width: 50vh
+        min-height: 100px
+        background: #f52828
+        color: white
+        text-align: center
 .settings 
     overflow: auto
     min-width: 30vh
@@ -141,7 +152,7 @@ body
     background: #364f6b
     color: white
     h3 
-        padding: 10px
+        padding: 12px
         margin: 0
         width: 100%
         text-align: center
@@ -201,6 +212,8 @@ body
 ::-webkit-scrollbar-thumb:hover 
     background: #061424
 @media screen and ( max-width:800px  )
+    .play 
+        min-width: 20vh
     .main 
         display: grid
         grid-template-areas: "header header header" "how-to-play how-to-play how-to-play" "play play settings"
