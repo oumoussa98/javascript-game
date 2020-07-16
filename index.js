@@ -1,6 +1,8 @@
 // generate the random number
 let randomNumber = Math.floor(Math.random() * 9000) + 1000;
 randomNumber = randomNumber.toString();
+let attempts = 0;
+let success = 0;
 
 // handle the button click event
 const handleSubmit = function () {
@@ -8,7 +10,12 @@ const handleSubmit = function () {
 	let userInput = document.getElementById("number").value;
 	let userInputLength = userInput.length;
 	// global if statement to check if the user insert a valid number
-	if (userInputLength === randomNumber.length) {
+	if (
+		userInputLength === randomNumber.length &&
+		success !== randomNumber.length
+	) {
+		// incriment attempts
+		attempts++;
 		// create a div element to display results
 		let div = document.createElement("div");
 		div.classList.add("results");
@@ -55,6 +62,7 @@ const handleSubmit = function () {
 				let text = document.createTextNode("T");
 				li.append(text);
 				l.push(i);
+				success++;
 			}
 			// if not let's check if the integer exist in the random number
 			else {
@@ -102,7 +110,7 @@ const handleSubmit = function () {
 		objDiv.scrollTop = -100;
 	}
 	// else display an error message
-	else {
+	else if (success !== randomNumber.length) {
 		// create a div element
 		let div = document.createElement("div");
 		div.classList.add("results");
@@ -110,6 +118,26 @@ const handleSubmit = function () {
 		// create a text element and append it to li
 		let text = document.createTextNode(
 			`Please enter ${randomNumber.length} integers `
+		);
+		div.append(text);
+		// get the html div element
+		const playDiv = document.getElementById("results-container");
+		// append the created div to it
+		playDiv.append(div);
+		// scroll up when ever the user enter a new number
+		let objDiv = document.getElementById("results-container");
+		objDiv.scrollTop = -100;
+	}
+	// display a congrats meassage
+	if (success === randomNumber.length) {
+		// create a div element
+		let div = document.createElement("div");
+		div.classList.add("results");
+		div.classList.add("success");
+		// create a text element and append it to li
+		let text = document.createTextNode(
+			`congrats you win after ${attempts} attempts 
+			Restart again or try a different level`
 		);
 		div.append(text);
 		// get the html div element
@@ -150,11 +178,11 @@ const setRandomNumber = function (counter) {
 	}
 };
 const start = function () {
-	restart();
 	let counter = document.getElementById("level").value;
 	setRandomNumber(counter);
-	console.log(randomNumber);
+	restart();
 };
+console.log(randomNumber);
 // let resolver = function (number, size) {
 // 	$("#number")
 // 		.val("" + number.join(""))
@@ -176,5 +204,3 @@ const start = function () {
 // 	console.log("Congrats ! Answer : ", number.join(""));
 // };
 // resolver([1, 2, 3, 4], 4);
-
-console.log(randomNumber);
