@@ -1,7 +1,6 @@
 // generate the random number
 let randomNumber = Math.floor(Math.random() * 9000) + 1000;
 randomNumber = randomNumber.toString();
-console.log(randomNumber);
 
 // handle the button click event
 const handleSubmit = function () {
@@ -60,7 +59,7 @@ const handleSubmit = function () {
 			// if not let's check if the integer exist in the random number
 			else {
 				let exist = false; //
-				for (k = 0; k < userInputLength; k++) {
+				for (k = 0; k < randomNumber.length; k++) {
 					// prevent to show P when the integer is just repeated
 					for (let m = 0; m < l.length; m++) {
 						if (k === l[m]) k++;
@@ -71,10 +70,7 @@ const handleSubmit = function () {
 						let li = document.createElement("li");
 						ul.append(li);
 						// to prevent some unexpected results when the nubmers are repeated
-						if (
-							userInput[i + 1] === randomNumber[i + 1] ||
-							userInput[k] === randomNumber[k]
-						) {
+						if (userInput[k] === randomNumber[k]) {
 							// create a text element and append it to li
 							let text = document.createTextNode("F");
 							li.classList.add("F");
@@ -113,14 +109,16 @@ const handleSubmit = function () {
 		div.classList.add("error");
 		// create a text element and append it to li
 		let text = document.createTextNode(
-			`Please enter ${randomNumber.length} integers
-			 click restart to clear the display `
+			`Please enter ${randomNumber.length} integers `
 		);
 		div.append(text);
 		// get the html div element
 		const playDiv = document.getElementById("results-container");
 		// append the created div to it
 		playDiv.append(div);
+		// scroll up when ever the user enter a new number
+		let objDiv = document.getElementById("results-container");
+		objDiv.scrollTop = -100;
 	}
 };
 // restart the game
@@ -138,6 +136,7 @@ const restart = function () {
 	}
 	// reset the input
 	document.getElementById("number").value = null;
+	console.log(randomNumber);
 };
 // set the random number
 const setRandomNumber = function (counter) {
@@ -153,7 +152,29 @@ const setRandomNumber = function (counter) {
 const start = function () {
 	restart();
 	let counter = document.getElementById("level").value;
-	console.log(counter);
 	setRandomNumber(counter);
 	console.log(randomNumber);
 };
+// let resolver = function (number, size) {
+// 	$("#number")
+// 		.val("" + number.join(""))
+// 		.parent()
+// 		.find("button")
+// 		.click();
+
+// 	let lastTest = $("#results-container").find(".results").last().text() || "";
+// 	let alpha = (lastTest + "").substr(size, size * 2 + 1).split("");
+
+// 	for (let a in alpha)
+// 		if (alpha[a] == "T")
+// 			number[a] = parseInt((lastTest + "").substr(0, size).split("")[a]);
+// 		else if (number[a]++ > 10) return console.log("Error ! algo broken");
+
+// 	if (["P", "F"].some((t) => alpha.includes(t)))
+// 		return resolver(number, size);
+
+// 	console.log("Congrats ! Answer : ", number.join(""));
+// };
+// resolver([1, 2, 3, 4], 4);
+
+console.log(randomNumber);
