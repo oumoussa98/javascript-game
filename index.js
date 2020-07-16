@@ -3,9 +3,9 @@ let randomNumber = Math.floor(Math.random() * 9000) + 1000;
 randomNumber = randomNumber.toString();
 let attempts = 0;
 let success = 0;
-
 // handle the button click event
 const handleSubmit = function () {
+	success = 0;
 	// get the user input value
 	let userInput = document.getElementById("number").value;
 	let userInputLength = userInput.length;
@@ -151,6 +151,8 @@ const handleSubmit = function () {
 };
 // restart the game
 const restart = function () {
+	// set success to 0
+	success = 0;
 	// get all Divs and delete it
 	let divs = document.querySelectorAll(".results");
 	divs.forEach((el) => el.remove());
