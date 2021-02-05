@@ -185,24 +185,3 @@ const start = function () {
 	restart();
 };
 console.log(randomNumber);
-// let resolver = function (number, size) {
-// 	$("#number")
-// 		.val("" + number.join(""))
-// 		.parent()
-// 		.find("button")
-// 		.click();
-
-// 	let lastTest = $("#results-container").find(".results").last().text() || "";
-// 	let alpha = (lastTest + "").substr(size, size * 2 + 1).split("");
-
-// 	for (let a in alpha)
-// 		if (alpha[a] == "T")
-// 			number[a] = parseInt((lastTest + "").substr(0, size).split("")[a]);
-// 		else if (number[a]++ > 10) return console.log("Error ! algo broken");
-
-// 	if (["P", "F"].some((t) => alpha.includes(t)))
-// 		return resolver(number, size);
-
-// 	console.log("Congrats ! Answer : ", number.join(""));
-// };
-// resolver([1, 2, 3, 4], 4);
