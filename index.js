@@ -148,6 +148,7 @@ const handleSubmit = function () {
 		let objDiv = document.getElementById("results-container");
 		objDiv.scrollTop = -objDiv.scrollHeight;
 	}
+	userInput = "";
 };
 // restart the game
 const restart = function () {
