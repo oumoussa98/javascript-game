@@ -107,7 +107,7 @@ const handleSubmit = function () {
 		}
 		// scroll up when ever the user enter a new number
 		let objDiv = document.getElementById("results-container");
-		objDiv.scrollTop = -100;
+		objDiv.scrollTop = -objDiv.scrollHeight;
 	}
 	// else display an error message
 	else if (success !== randomNumber.length) {
@@ -126,7 +126,7 @@ const handleSubmit = function () {
 		playDiv.append(div);
 		// scroll up when ever the user enter a new number
 		let objDiv = document.getElementById("results-container");
-		objDiv.scrollTop = -100;
+		objDiv.scrollTop = -objDiv.scrollHeight;
 	}
 	// display a congrats meassage
 	if (success === randomNumber.length) {
@@ -146,7 +146,7 @@ const handleSubmit = function () {
 		playDiv.append(div);
 		// scroll up when ever the user enter a new number
 		let objDiv = document.getElementById("results-container");
-		objDiv.scrollTop = -100;
+		objDiv.scrollTop = -objDiv.scrollHeight;
 	}
 };
 // restart the game
