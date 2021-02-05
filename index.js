@@ -10,10 +10,7 @@ const handleSubmit = function () {
 	let userInput = document.getElementById("number").value;
 	let userInputLength = userInput.length;
 	// global if statement to check if the user insert a valid number
-	if (
-		userInputLength === randomNumber.length &&
-		success !== randomNumber.length
-	) {
+	if (userInputLength === randomNumber.length && success !== randomNumber.length) {
 		// incriment attempts
 		attempts++;
 		// create a div element to display results
@@ -116,9 +113,7 @@ const handleSubmit = function () {
 		div.classList.add("results");
 		div.classList.add("error");
 		// create a text element and append it to li
-		let text = document.createTextNode(
-			`Please enter ${randomNumber.length} integers `
-		);
+		let text = document.createTextNode(`Please enter ${randomNumber.length} integers `);
 		div.append(text);
 		// get the html div element
 		const playDiv = document.getElementById("results-container");
@@ -148,7 +143,7 @@ const handleSubmit = function () {
 		let objDiv = document.getElementById("results-container");
 		objDiv.scrollTop = -objDiv.scrollHeight;
 	}
-	userInput = "";
+	document.getElementById("number").value = "";
 };
 // restart the game
 const restart = function () {
@@ -156,7 +151,7 @@ const restart = function () {
 	success = 0;
 	// get all Divs and delete it
 	let divs = document.querySelectorAll(".results");
-	divs.forEach((el) => el.remove());
+	divs.forEach(el => el.remove());
 	// update random number
 	let counter = document.getElementById("level").value;
 	if (counter) {
