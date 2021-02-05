@@ -184,4 +184,9 @@ const start = function () {
 	setRandomNumber(counter);
 	restart();
 };
+document.getElementById("number").addEventListener("keypress", function (e) {
+	if (e.key === "Enter") {
+		handleSubmit();
+	}
+});
 console.log(randomNumber);
