@@ -1,0 +1,353 @@
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0;
+	margin: auto;
+	font-family: "roboto", sans-serif;
+	font-weight: 300;
+}
+
+.main {
+	display: -ms-grid;
+	display: grid;
+	grid-template-areas: "header header header header" "play play settings how-to-play ";
+}
+
+.header {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 4;
+	grid-area: header;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 10px;
+	border-radius: 6px;
+	height: 15vh;
+	padding: 10px;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	background: #364f6b;
+	color: white;
+}
+
+.header h1 {
+	text-align: center;
+}
+
+.how-to-play {
+	overflow: auto;
+	height: 70vh;
+	-ms-grid-row: 2;
+	-ms-grid-column: 4;
+	grid-area: how-to-play;
+	margin: 10px;
+	padding: 0;
+	border-radius: 6px;
+	background: #364f6b;
+	color: white;
+}
+
+.how-to-play h2 {
+	padding: 10px;
+	margin: 0;
+	width: 100%;
+	text-align: center;
+	border-radius: 6px 6px 0 0;
+	-webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.how-to-play h3 {
+	padding: 10px 20px;
+}
+
+.how-to-play p {
+	padding: 10px 20px;
+}
+
+.how-to-play p .tips {
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.play {
+	height: 70vh;
+	min-width: 60vh;
+	-ms-grid-row: 2;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 2;
+	grid-area: play;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 10px;
+	border-radius: 6px;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	background: #364f6b;
+	color: white;
+}
+
+.play .input-div {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	padding: 10px;
+	text-align: center;
+	border-radius: 6px 6px 0 0;
+	-webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.play input[type="number"] {
+	padding: 10px;
+	width: 80%;
+	outline: none;
+	border: none;
+	border-radius: 6px;
+	background: #121a24;
+	color: white;
+}
+
+.play input::-webkit-outer-spin-button,
+.play input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.play button {
+	width: 20%;
+	border: none;
+	margin: 0 0 0 4px;
+	color: #222121;
+	background: #08b2b8;
+	cursor: pointer;
+	border-radius: 5px;
+	outline: none;
+}
+
+.play .results-container {
+	overflow: auto;
+	margin: 10px 0px;
+	padding: 10px 10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: reverse;
+	-ms-flex-direction: column-reverse;
+	flex-direction: column-reverse;
+}
+
+.play .results {
+	color: white;
+	margin: 6px 0;
+	border-radius: 6px;
+	text-align: center;
+	min-width: 200px;
+	background: #213041;
+	padding: 2px 0;
+}
+
+.play .results ul {
+	list-style: none;
+	display: block;
+	padding: 4px 8px;
+	margin: 0;
+}
+
+.play .results ul li {
+	display: inline-block;
+	text-align: center;
+	padding: 0 15px;
+}
+
+.play .results ul .T {
+	font-weight: 900;
+	color: #11f711;
+}
+
+.play .results ul .F {
+	font-weight: 900;
+	color: #f81313;
+}
+
+.play .results ul .P {
+	font-weight: 900;
+	color: #fac310;
+}
+
+.play .error {
+	margin: 10px auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 0 10px;
+	max-width: 50vh;
+	min-height: 80px;
+	background: #f52a2a;
+	color: white;
+	text-align: center;
+}
+
+.play .success {
+	margin: 10px auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 0 10px;
+	max-width: 50vh;
+	min-height: 80px;
+	background: #06a721;
+	color: white;
+	text-align: center;
+}
+
+.settings {
+	overflow: auto;
+	min-width: 30vh;
+	height: 70vh;
+	-ms-grid-row: 2;
+	-ms-grid-column: 3;
+	grid-area: settings;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 10px;
+	padding: 0;
+	border-radius: 6px;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	background: #364f6b;
+	color: white;
+}
+
+.settings h3 {
+	padding: 12px;
+	margin: 0;
+	width: 100%;
+	text-align: center;
+	border-radius: 6px 6px 0 0;
+	-webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.settings .restart-button {
+	width: 80%;
+	padding: 10px;
+	border: none;
+	margin: 10px 0px;
+	color: #ece7e7;
+	background: #db0b27;
+	cursor: pointer;
+	border-radius: 6px;
+	outline: none;
+}
+
+.settings .restart-button:hover {
+	background: #af0a20;
+}
+
+.settings .level-text {
+	padding: 20px 10px 0 10px;
+}
+
+.settings select {
+	width: 80%;
+	padding: 10px;
+	border: none;
+	margin: 10px 0px;
+	color: #ece7e7;
+	background: #06965a;
+	cursor: pointer;
+	border-radius: 6px;
+	outline: none;
+}
+
+.settings select:hover {
+	background: #067a4a;
+}
+
+.settings .start {
+	width: 60%;
+	padding: 10px 0px;
+	border: none;
+	margin: 5px 0px;
+	color: #ece7e7;
+	background: #06659c;
+	cursor: pointer;
+	outline: none;
+	border-radius: 5px;
+}
+
+.settings .start:hover {
+	background: #055c8f;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #122438;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #061424;
+}
+
+@media screen and (max-width: 800px) {
+	.play {
+		min-width: 20vh;
+	}
+	.main {
+		display: -ms-grid;
+		display: grid;
+		grid-template-areas: "header header header" "how-to-play how-to-play how-to-play" "play play settings";
+	}
+}
+
+@media screen and (max-width: 740px) {
+	.main {
+		display: -ms-grid;
+		display: grid;
+		grid-template-areas: "header" "how-to-play" "play" "settings";
+	}
+}
+/*# sourceMappingURL=style.css.map */
